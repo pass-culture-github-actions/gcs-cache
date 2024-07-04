@@ -30,7 +30,7 @@ outputs:
     description: Whether the cache was successfuly restored
 
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/main/index.js'
   post: 'dist/post/index.js'
   post-if: 'success()'
