@@ -1,6 +1,6 @@
 {
   "name": "gcs-cache",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Cache your workload to a Google Cloud Storage bucket",
   "scripts": {
     "build": "tsc",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:pass-culture-github-actions/gcs-cache.git"
+    "url": "git@github.com:halradaideh/gcs-cache.git"
   },
   "keywords": [
     "actions",
@@ -24,7 +24,7 @@
   "author": "Dimitri Kopriwa <dimitri.kopriwa@passculture.fr>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pass-culture-github-actions/gcs-cache/issues"
+    "url": "https://github.com/halradaideh/gcs-cache/issues"
   },
   "husky": {
     "hooks": {
@@ -48,7 +48,7 @@
     "*.{js,jsx,ts,tsx}": "eslint --fix",
     "*.{md,yml,html,css,scss,json}": "prettier --write"
   },
-  "homepage": "https://github.com/pass-culture-github-actions/gcs-cache#readme",
+  "homepage": "https://github.com/halradaideh/gcs-cache#readme",
   "devDependencies": {
     "@commitlint/cli": "17.4.4",
     "@commitlint/config-conventional": "17.4.4",
@@ -80,7 +80,7 @@
     "@actions/exec": "1.1.1",
     "@actions/github": "5.1.1",
     "@actions/glob": "0.4.0",
-    "@google-cloud/storage": "6.9.4",
+    "@google-cloud/storage": "7.8.0",
     "semver": "7.3.8",
     "tmp-promise": "3.0.3"
   },
