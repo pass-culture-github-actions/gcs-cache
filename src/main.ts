@@ -39,8 +39,10 @@ async function getBestMatch(
     .then(([files]) =>
       files.sort(
         (a, b) =>
-          new Date((b.metadata as ObjectMetadata).updated).getTime() -
-          new Date((a.metadata as ObjectMetadata).updated).getTime(),
+          new Date(
+            (b.metadata as unknown as ObjectMetadata).updated,
+          ).getTime() -
+          new Date((a.metadata as unknown as ObjectMetadata).updated).getTime(),
       ),
     )
     .catch((err) => {
@@ -54,7 +56,7 @@ async function getBestMatch(
         bucketFiles.map((f) => ({
           name: f.name,
           metadata: {
-            updated: (f.metadata as ObjectMetadata).updated,
+            updated: (f.metadata as unknown as ObjectMetadata).updated,
           },
         })),
       )}.`,
@@ -111,7 +113,7 @@ async function main() {
 
   const bestMatchMetadata = await bestMatch
     .getMetadata()
-    .then(([metadata]) => metadata as ObjectMetadata)
+    .then(([metadata]) => metadata as unknown as ObjectMetadata)
     .catch((err) => {
       core.error('Failed to read object metadatas');
       throw err;
